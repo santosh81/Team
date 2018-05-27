@@ -1,0 +1,102 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package kiltedcoffee
+ */
+
+?>
+<?php 
+  global $kiltedcoffee;
+?>
+	<!--START Footer -->
+<footer>
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+      <?php $f_logo = $kiltedcoffee['f_logo']['url']; ?>
+      <?php if ($f_logo!="") { ?>
+      <h2 class="logo">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <img src="<?php echo $f_logo; ?>">
+        </a>
+      </h2>
+      <?php } ?>
+      <div class="col-sm-12">
+        <ul class="list-inline m-1">  
+          <?php $facebook = $kiltedcoffee['facebook']; ?>
+          <?php $twitter = $kiltedcoffee['twitter']; ?>
+          <?php $linkedin = $kiltedcoffee['linkedin']; ?>
+          <?php $pinterest = $kiltedcoffee['pinterest']; ?>
+          <?php $google_plus = $kiltedcoffee['google_plus']; ?>
+          <?php $instagram = $kiltedcoffee['instagram']; ?>
+          <?php $youtube = $kiltedcoffee['youtube']; ?>
+          <?php $emial_envelope = $kiltedcoffee['emial_envelope']; ?>
+
+          <?php if ($facebook!=""): ?>          
+            <li><a href="<?php echo $facebook; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          <?php endif ?>
+          <?php if ($twitter!=""): ?>            
+            <li><a href="<?php echo $twitter; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <?php endif ?>
+          <?php if ($linkedin!=""): ?>
+            <li><a href="<?php echo $linkedin; ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+          <?php endif ?>
+          <?php if ($pinterest!=""): ?>
+            <li><a href="<?php echo $pinterest; ?>" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+          <?php endif ?>
+          <?php if ($google_plus!=""): ?>          
+            <li><a href="<?php echo $google_plus; ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+          <?php endif ?>
+          <?php if ($instagram!=""): ?>
+          <li><a href="<?php echo $instagram; ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <?php endif ?>
+          <?php if ($youtube!=""): ?>
+            <li><a href="<?php echo $youtube; ?>" target="_blank"><i class="fa fa-youtube"></i></a></li>
+          <?php endif ?>
+          <?php if ($emial_envelope!=""): ?>          
+            <li><a href="mailto:<?php echo $emial_envelope; ?>"><i class="fa fa-envelope"></i></a></li>
+          <?php endif ?>
+        </ul>
+      </div>
+      <div class="col-sm-12 m-1">
+        <!-- <ul class="list-inline">
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">BLOG</a></li>
+        </ul> -->
+        <?php
+            wp_nav_menu( array(
+              'theme_location' => 'footer_menu',
+              'menu_class'  => 'list-inline'
+            ) );
+          ?>
+      </div>
+      <div class="col-sm-12">
+        <h5>Use the <a href="#.">Newsletter</a> Block below to collect email addresses.</h5>
+        <div class="clearfix m-1"></div>
+        <?php echo do_shortcode('[mc4wp_form id="101"]'); ?>
+      </div>
+      <div class="clearfix m-2"></div>
+      <div class="col-sm-12 text-uppercase m-1">
+        <h6>POWERED BY <a target="_blank" href="https://webb4biz.com/">webb4biz.com</a></h6>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--END Footer --> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.2.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script> 
+<!-- parallax JS --> 
+<script src="<?php echo get_template_directory_uri(); ?>/js/parallax.min.js"></script> 
+<!-- Pushy JS --> 
+<script src="<?php echo get_template_directory_uri(); ?>/js/pushy.min.js"></script>
+
+<?php wp_footer(); ?>
+</body>
+</html>
